@@ -36,7 +36,7 @@ export default function DrawerAppBar(props: Props) {
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
       <Typography variant="h6" sx={{ my: 2 }}>
-        MUI
+        Lacoste Walter
       </Typography>
       <Divider />
       <List>
@@ -67,13 +67,13 @@ export default function DrawerAppBar(props: Props) {
           >
             <MenuIcon />
           </IconButton>
-          <Typography
+          {/* <Typography
             variant="h6"
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
           >
-            MUI
-          </Typography>
+            Walter Lacoste
+          </Typography> */}
           <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {navItems.map((item) => (
               <Button key={item} sx={{ color: '#fff' }}>
@@ -100,7 +100,7 @@ export default function DrawerAppBar(props: Props) {
           {drawer}
         </Drawer>
       </Box>
-      <Box component="main" sx={{ p: 3 }}>
+      {/* <Box component="main" sx={{ p: 3 }}>
         <Toolbar />
         <Typography>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique unde
@@ -136,7 +136,7 @@ export default function DrawerAppBar(props: Props) {
           Voluptates perspiciatis, in pariatur impedit, nam facilis libero dolorem
           dolores sunt inventore perferendis, aut sapiente modi nesciunt.
         </Typography>
-      </Box>
+      </Box> */}
     </Box>
   );
 }
