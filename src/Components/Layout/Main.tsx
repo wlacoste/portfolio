@@ -8,9 +8,10 @@ interface IMainProps {
 export default function Main({ children }: IMainProps){
     return (
         <>
+        
         <ResponsiveAppBar/>
 
-        <main className={styles.main}>{children}</main>
+        <div className={styles.main}>{children}</div>
         
         </>
 
