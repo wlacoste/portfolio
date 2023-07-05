@@ -1,0 +1,20 @@
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5%;
+}
+.profilePic{
+    max-width: 300px;
+    max-height: 300px;
+    border-radius: 100%;
+    width: 50vh;
+    object-fit: cover;
+    height: 50vh;
+}
+.descripcion{
+    width: 50%;
+    text-align: justify;
+        text-justify: inter-word;
+
+}
