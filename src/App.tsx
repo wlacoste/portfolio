@@ -5,6 +5,7 @@ import './App.css'
 import ResponsiveAppBar from './Components/Appbar/appbar'
 import Main from './Components/Layout/Main'
 import Intro from './Components/Intro/intro'
+import Contact from './Components/Contact/Contact'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -14,6 +15,7 @@ function App() {
     <Main> 
       <Intro/>
       <Intro/>
+      <Contact/>
     </Main>
       
     </>
