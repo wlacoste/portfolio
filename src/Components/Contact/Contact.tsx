@@ -1,30 +1,44 @@
 import React, { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import styles from "./styles.module.scss";
-import { TextField } from "@mui/material";
+import { Button, TextField } from "@mui/material";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function Contact() {
   const form = useRef<any>();
 
+  const notify = () =>
+    toast.success("Thanks for you interest!", {
+      position: "top-right",
+      autoClose: 4000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    });
   const sendEmail = (e: any) => {
     e.preventDefault();
 
-    emailjs
-      .sendForm(
-        "service_v3g7n7g",
-        "template_a47vfrs",
-        form.current,
-        "P4wbg3RWAkmyNdTMX"
-      )
-      .then(
-        (result: any) => {
-          console.log(result.text);
-          console.log("mensaje enviado");
-        },
-        (error: any) => {
-          console.log(error.text);
-        }
-      );
+    // emailjs
+    // .sendForm(
+    //   "service_v3g7n7g",
+    //   "template_a47vfrs",
+    //   form.current,
+    //   "P4wbg3RWAkmyNdTMX"
+    // )
+    notify();
+
+    new Promise(() => console.log("hola")).then(
+      (result: any) => {
+        notify();
+      },
+      (error: any) => {
+        console.log(error.text);
+      }
+    );
   };
 
   return (
@@ -33,14 +47,28 @@ export default function Contact() {
         <div className={styles.text}>Get in touch with me</div>
 
         <form ref={form} onSubmit={sendEmail}>
+          <ToastContainer
+            position="top-right"
+            autoClose={4000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="light"
+          />
+
           <div className={styles.formRow}>
             <div className={styles.inputdata}>
               <label>Name</label>
               <TextField
                 id="standard-basic"
                 name="from_name"
-                label="Enter your name"
+                placeholder="Enter your name"
                 variant="standard"
+                required
               />
             </div>
             <div className={styles.inputdata}>
@@ -48,8 +76,9 @@ export default function Contact() {
               <TextField
                 id="standard-basic"
                 name="reply_to"
-                label="Enter your email"
+                placeholder="Enter your email"
                 variant="standard"
+                required
               />
             </div>
             <div className={styles.inputdata}>
@@ -58,12 +87,21 @@ export default function Contact() {
                 id="standard-basic"
                 name="message"
                 multiline
-                label="Write your message"
+                minRows="4"
+                placeholder="Write your message"
                 variant="standard"
+                required
+                sx={{
+                  "& legend": { display: "none" },
+                  "& fieldset": { top: 0 },
+                }}
               />
             </div>
           </div>
-          <input type="submit" value="Send" />
+          <Button type="submit" value="Send" variant="contained">
+            Send
+          </Button>
+          {/* <input type="submit" value="Send" /> */}
         </form>
       </div>
     </div>

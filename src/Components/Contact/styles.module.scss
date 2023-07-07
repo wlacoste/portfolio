@@ -5,12 +5,35 @@
   align-self: center;
   justify-content: center;
   width: 50%;
+  margin: 3rem;
   margin-left: auto;
   margin-right: auto;
+  max-width: 500px;
+  border-radius: 1rem;
+  box-shadow: 1px 2px 3px 4px rgba(20, 20, 20, 0.4);
+  padding: 2rem;
 }
 
 .inputdata {
   display: flex;
   flex-direction: column;
   padding: 20px;
+
+  label {
+    text-align: left;
+  }
+}
+
+@media only screen and (width < 768px) {
+  .container {
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-content: center;
+    width: 100%;
+    margin: 3rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
