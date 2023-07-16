@@ -101,7 +101,6 @@ export default function Contact() {
           <Button type="submit" value="Send" variant="contained">
             Send
           </Button>
-          {/* <input type="submit" value="Send" /> */}
         </form>
       </div>
     </div>
