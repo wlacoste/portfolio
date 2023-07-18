@@ -7,15 +7,23 @@ import Main from "./Components/Layout/Main";
 import Intro from "./Components/Intro/intro";
 import Contact from "./Components/Contact/Contact";
 
+import { Parallax, ParallaxLayer } from "@react-spring/parallax";
+
 function App() {
   return (
-    <>
-      <Main>
-        <Intro />
+    <div>
+      <Parallax pages={2} style={{ top: "0", left: "0" }}>
+        <ParallaxLayer speed={1}>
+          {/* <h2>hola gente</h2> */}
+          <Intro />
+        </ParallaxLayer>
 
-        <Contact />
-      </Main>
-    </>
+        <ParallaxLayer offset={1} speed={0.5}>
+          <Contact />
+          {/* <h2>hola final</h2> */}
+        </ParallaxLayer>
+      </Parallax>
+    </div>
   );
 }
 
